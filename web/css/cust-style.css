@@ -1,0 +1,91 @@
+/* Custom value
+* ==============================================================
+*/
+
+/* Margin
+* --------------------------------------
+*/
+.cust-mt {
+    margin-top: 40px !important;
+}
+.cust-mt-1 {
+    margin-top: 50px !important;
+}
+
+/* Border
+* --------------------------------------
+*/
+.cust-bottom-border {
+    border-bottom: 2px solid lightgray;
+}
+.cust-bottom-border-2 {
+    border-bottom: 4px solid black;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Site Style
+* ==============================================================
+*/
+body {
+    background-color: lightblue;
+}
+
+/* Navbar
+* ==============================================================
+*/
+.cust-input-outline {
+    outline: none !important;
+    border: none;
+    border-radius: 0;
+    background-color: #343A40;
+    color: white;
+}
+.cust-input-outline:focus {
+    outline: none !important;
+    border: none;
+    border-radius: 0;
+    background-color: #343A40;
+    box-shadow: none;
+    color: white;
+}
+.cust-btn-outline {
+    border: 1px solid lightgray;
+    color: lightgray;
+}
+.cust-btn-outline:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+/* Table
+* ==============================================================
+*/
+.cust-link-edit {
+    padding: 10px 12px;
+    color: black;
+}
+.cust-link-edit:hover {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+}
+.cust-link-delete {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-top: 2px;
+    padding: 9px 10px;
+}
+.cust-link-delete:hover {
+    text-decoration: none;
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Form
+* ==============================================================
+*/
+.help-block {
+    color: red;
+}
