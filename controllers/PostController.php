@@ -10,14 +10,14 @@ class PostController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        $model = new Post();
+        $items = new Post();
 
         $context = [
             'site' => 'Post',
             'page' => 'Post',
-            'count' => $model->find()->count(),
-            'fthree' => $model->find()->orderBy('id DESC')->limit(3)->all(),
-            'model' => $model->find()->orderBy('id DESC')->all(),
+            'count' => $items->find()->count(),
+            // 'fthree' => $model->find()->orderBy('id DESC')->limit(3)->all(),
+            // 'items' => $items->find()->where(['user_id'=>Yii::$app->user->identity->id])->orderBy('id DESC'),
         ];
 
         return $this->render('index', $context);
@@ -63,6 +63,7 @@ class PostController extends \yii\web\Controller
                         $id = Yii::$app->user->identity->id;
                         $img_path = 'uploads/' .$id. '/post/' .$slug. '/'.$img_name;
                         $model->img_loc1->saveAs($img_path);
+                        $this->ResizeImage($img_path, 1920, 680);
                         $model->img_loc1 = $img_path;
                         
                         /**
@@ -80,7 +81,7 @@ class PostController extends \yii\web\Controller
                         // uploads/2/post/post_title/img2.jpg
                         $img_path1 = 'uploads/' .$id. '/post/' .$slug. '/' .$img_name1;
                         copy($img_path, $img_path1);
-                        $this->ResizeImage($img_path1, 50, 50);
+                        $this->ResizeImage($img_path1, 480, 320);
                         $model->img_loc2->saveAs($img_path1);                        
                         $model->img_loc2 = $img_path1;
                     } else {
@@ -109,6 +110,19 @@ class PostController extends \yii\web\Controller
             'model' => $model,
         ];
         return $this->render('create', $context);
+    }
+
+    public function actionDetails($slug=null) {
+        $model = Post::findOne(['slug'=>$slug]);
+
+        $context = [
+            'site' => 'Post',
+            'page' => 'Post Details',
+            'slug' => $slug,
+            'model' => $model,
+        ];
+
+        return $this->render('details', $context);
     }
 
     public function ResizeImage($file, $w, $h, $crop = FALSE) {

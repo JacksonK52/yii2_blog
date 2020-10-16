@@ -6,10 +6,14 @@
 * --------------------------------------
 */
 .cust-mt {
-    margin-top: 40px !important;
+    margin-top: 32px !important;
 }
 .cust-mt-1 {
     margin-top: 50px !important;
+}
+
+.cust-opacity-card {
+    opacity: .8;
 }
 
 /* Border
@@ -29,6 +33,14 @@
 */
 body {
     background-color: lightblue;
+}
+
+/* Carousel
+* ==============================================================
+*/
+.cust-carousel-pose {
+    position: absolute;
+    top: 25%;
 }
 
 /* Navbar

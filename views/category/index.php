@@ -12,7 +12,7 @@ $this->title = 'Blog | ' .$page;
 include Yii::$app->basePath . '/views/layouts/nav.php';
 ?>
 
-<div class="container mt-3">
+<div class="container" style="margin-top:70px">
     <div class="row">
         <div class="col-12">
             <h1 class="cust-bottom-border-2">Categories</h1>

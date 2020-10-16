@@ -23,7 +23,7 @@ use yii\helpers\Url;
                 <li class="nav-item <?php if($page=='Categories') echo 'active'; ?>">
                     <a class="nav-link" href="<?= Url::to(['/category/index']) ?>">Categories</a>
                 </li>
-                <li class="nav-item <?php if($page=='Post') echo 'active'; ?>">
+                <li class="nav-item <?php if($page=='Post'||$page=='Post Details') echo 'active'; ?>">
                     <a class="nav-link" href="<?= Url::to(['/post/index']) ?>">Post</a>
                 </li>
                 <li class="nav-item <?php if($page=='Create Post') echo 'active'; ?>">
@@ -74,12 +74,12 @@ use yii\helpers\Url;
 </nav>
 
 <!-- Breadcrumb and Flash message -->
-<div class="container" style="margin-top: 70px">
+<div class="container">
     <!-- Breadcrumb -->
     <div class="row">
         <div class="col-12">
             <?php if ($page != 'Home' && $page != 'Categories' && $page != 'Post') { ?>
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" style="margin-top: 70px">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?= Url::to(['/site/index']) ?>"><?= $site ?></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><?= $page ?></li>

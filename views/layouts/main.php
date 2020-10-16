@@ -29,7 +29,7 @@ AppAsset::register($this);
 
     <?= $content ?>
 
-    <footer class="footer">
+    <footer class="footer mt-5">
         <div class="container">
             <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
